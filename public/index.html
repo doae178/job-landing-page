@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join Our Team - Fullstack & AI Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="mar.png" alt="Logo" class="logo">
+        <span class="company-name">MarkabaApp</span>
+    </div>
+
+    <button id="themeToggle">🌙</button>
+</header>
+
+<!-- ============================= -->
+<!-- HERO / Job Description -->
+<!-- ============================= -->
+<section class="hero">
+    <h1>Fullstack & AI Developer</h1>
+    <p>Join <strong>MarkabaApp</strong> to build cutting-edge web applications and AI-powered solutions.</p>
+
+    <div class="job-details-preview">
+        <h2>Responsibilities & Requirements</h2>
+        <ul>
+            <li>Develop web apps using modern frontend & backend technologies.</li>
+            <li>Implement AI/ML features with Python, TensorFlow, or PyTorch.</li>
+            <li>Work in a collaborative team environment.</li>
+        </ul>
+        <button id="showMoreBtn" class="show-more-btn">see more</button>
+    </div>
+
+    <div class="job-details-full" style="display:none;">
+        <h2>Full Responsibilities</h2>
+        <ul>
+            <li>Ensure performance, scalability, and security of applications.</li>
+            <li>Participate in code reviews and follow best practices.</li>
+        </ul>
+
+        <h2>Full Requirements</h2>
+        <ul>
+            <li>Strong knowledge of JavaScript, Node.js, React.js, and Python.</li>
+            <li>Experience with REST APIs, databases (SQL/NoSQL), and cloud services.</li>
+            <li>Familiarity with AI/ML frameworks and data processing.</li>
+            <li>Good problem-solving skills and teamwork ability.</li>
+        </ul>
+
+        <h2>Perks</h2>
+        <ul>
+            <li>Flexible remote work options</li>
+            <li>Work with an innovative and collaborative team</li>
+            <li>Opportunities for learning AI and fullstack technologies</li>
+        </ul>
+    </div>
+
+    <a href="#apply" class="cta-btn">Apply Now</a>
+</section>
+<!-- ============================= -->
+<!-- Application Form -->
+<!-- ============================= -->
+<section id="apply" class="application-form">
+    <form id="applicationForm" action="/apply" method="POST" enctype="multipart/form-data">
+        <!-- CSRF token généré côté serveur -->
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+        <!-- Informations personnelles -->
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+
+        <!-- Upload CV sécurisé -->
+        <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+
+        <!-- reCAPTCHA v2 -->
+        <div class="g-recaptcha" data-sitekey="6LenZXAsAAAAAHtRDNSuJu7xfr5krAsZjve5Bnb9"></div>
+
+        <!-- Bouton de soumission -->
+        <button type="submit" class="submit-btn">
+            <span class="btn-text">Submit Application</span>
+            <span class="loader"></span>
+        </button>
+    </form>
+</section>
+
+<div id="toast"></div>
+
+<footer>
+    <p>© 2026 MarkabaApp. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

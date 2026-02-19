@@ -1,0 +1,146 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family:'Inter','Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    transition:0.3s ease;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+header {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 60px; background:rgba(15,23,42,0.8); backdrop-filter:blur(12px);
+    box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+.logo-container { display:flex; align-items:center; gap:15px; }
+.logo { width:70px; height:70px; padding:10px;
+    background:linear-gradient(135deg,#06b6d4,#3b82f6); border-radius:20px;
+    box-shadow:0 0 20px rgba(59,130,246,0.6); object-fit:contain;
+    transition:0.3s ease;}
+.logo:hover { transform:scale(1.1); box-shadow:0 0 30px rgba(59,130,246,0.9);}
+.company-name { font-size:26px; font-weight:600; letter-spacing:1px;
+    background:linear-gradient(90deg,#38bdf8,#6366f1);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    transition:0.3s;}
+.company-name:hover { letter-spacing:2px;}
+#themeToggle { background:rgba(255,255,255,0.1); border:none; padding:8px 12px;
+    border-radius:50px; cursor:pointer; color:white; font-size:18px; transition:0.3s;}
+#themeToggle:hover { background:rgba(255,255,255,0.2); }
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+.hero { text-align:center; padding:100px 20px; }
+.hero h1 { font-size:52px; font-weight:700; margin-bottom:15px; }
+.hero p { font-size:20px; opacity:0.8; margin-bottom:35px; }
+.job-details { text-align:left; max-width:800px; margin:0 auto 2rem auto; }
+.job-details h2 { font-size:1.5rem; margin:1rem 0 0.5rem; color:#1e3a8a; }
+.job-details ul { list-style:disc; margin-left:1.5rem; }
+.cta-btn { display:inline-block; padding:15px 35px; border-radius:50px;
+    background:linear-gradient(90deg,#6366f1,#8b5cf6); color:white;
+    text-decoration:none; font-weight:600; transition:0.3s ease;
+    box-shadow:0 5px 20px rgba(99,102,241,0.4);}
+.cta-btn:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(99,102,241,0.6);}
+.show-more-btn {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(90deg,#6366f1,#8b5cf6);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.show-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99,102,241,0.5);
+}
+
+/* ============================= */
+/* APPLICATION FORM */
+/* ============================= */
+.application-form { max-width:520px; margin:50px auto; padding:35px;
+    border-radius:20px; background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px); box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    animation:fadeIn 0.8s ease-in-out; display:flex; flex-direction:column;}
+.application-form input { width:100%; padding:14px; margin:14px 0; border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.08);
+    color:white; font-size:14px; transition:0.3s;}
+.application-form input:focus { border-color:#6366f1; outline:none; box-shadow:0 0 10px rgba(99,102,241,0.5);}
+.application-form .g-recaptcha { margin:20px 0; }
+.submit-btn { width:100%; padding:14px; border-radius:12px; border:none;
+    background:linear-gradient(90deg,#6366f1,#8b5cf6); color:white;
+    font-weight:600; cursor:pointer; transition:0.3s; position:relative; overflow:hidden;}
+.submit-btn:hover { transform:translateY(-2px); box-shadow:0 8px 25px rgba(139,92,246,0.6);}
+.loader { display:none; border:3px solid white; border-top:3px solid transparent;
+    border-radius:50%; width:18px; height:18px; animation:spin 1s linear infinite;
+    position:absolute; right:15px; top:15px;}
+
+/* ============================= */
+/* TOAST & FOOTER */
+/* ============================= */
+#toast { position:fixed; bottom:25px; right:25px; background:#22c55e; padding:15px 25px;
+    border-radius:10px; display:none; font-weight:500; box-shadow:0 10px 25px rgba(0,0,0,0.4);}
+footer { text-align:center; padding:25px; background:rgba(255,255,255,0.05); margin-top:50px;
+    font-size:14px; opacity:0.7; }
+.job-summary, .job-details-full {
+    max-width:800px;
+    margin:0 auto 2rem auto;
+    text-align:left;
+    background: rgba(255,255,255,0.05);
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.job-summary ul, .job-details-full ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-summary ul li, .job-details-full ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.job-summary ul li::before, .job-details-full ul li::before {
+    content: '•';
+    position: absolute;
+    left:0;
+    color:#6366f1;
+    font-weight: bold;
+}
+
+
+/* ============================= */
+/* LIGHT MODE */
+.light-mode { background:#f1f5f9; color:#111; }
+.light-mode header { background:white; }
+.light-mode .application-form { background:white; color:black; }
+.light-mode input { background:#f3f4f6; color:black; }
+
+/* ============================= */
+/* ANIMATIONS */
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); }}
+
+/* ============================= */
+/* RESPONSIVE */
+@media (max-width:768px) {
+    header { padding:15px 25px; }
+    .hero h1 { font-size:36px; }
+    .logo { width:55px; height:55px; }
+    .company-name { font-size:20px; }
+    .application-form { margin:30px 20px; }
+}
